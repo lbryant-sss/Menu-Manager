@@ -8,7 +8,7 @@
     font-size: 1.09rem;
     padding: 0 30px;
     width: 100%;
-    height: 80px;
+    height: 60px;
     border-radius: 10px;
     position: fixed;
     top: 0;
@@ -19,6 +19,7 @@
 .navbar_logo {
     justify-content: start;
     cursor: pointer;
+    margin-top: 30px;
 }
 
 
@@ -47,34 +48,42 @@
     }
 }
 
+.navbar_menubar {
+    margin-right: 5%;
+    display: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.closebar{
+    display: none;
+}
+
 @media screen and (max-width: 850px) {
-    .navbar_container {
-        z-index: 99;
-    }
     .navbar_links {
-        animation: navMotion 0.5s ease;
-        display: flex;
+        top: 0;
+        right: 0%;
+        position: fixed;
+        display: none;
         flex-direction: column;
-        justify-content: center;
+        justify-content: flex-start;
+        z-index: 999;
+        animation: navMotion 0.5s ease;
         background-color: rgba(255, 255, 255, 0.25);
-        box-shadow: 0 8ppx 32px 0 rgba(0, 0, 0, 0.1);
+        box-shadow: 0 -10px 10px 0 rgba(0, 0, 0, 0.1);
         backdrop-filter: blur(4px);
         border-bottom-right-radius: 10px;
         border-bottom-left-radius: 10px;
-        width: 85%;
+        width: 50%;
         height: auto;
-        position: absolute;
-        top: 0;
-        left: 0%;
         align-items: stretch;
-        padding: 80px 0 30px 0;
         margin: 0;
         border: solid 1px #dadada;
     }
+    
     .navbar_links a{
         display: block;
         widows: 100%;
-        padding: 2rem 0;
+        padding: 10px 0;
         color: #222;
 
         &:hover {
@@ -82,8 +91,13 @@
             backdrop-filter: blur(20px);
         }
     }
-
-
+    .closebar {
+    display: block;
+    }
+    .navbar_menubar{
+        display: inline-block;
+        margin-right: 10%;
+    }
 
     @keyframes navMotion {
         0% {
@@ -94,3 +108,4 @@
         }
     }
 }
+
