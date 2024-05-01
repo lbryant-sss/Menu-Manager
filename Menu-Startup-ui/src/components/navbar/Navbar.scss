@@ -1,99 +1,69 @@
 @import '../../styles/mixins.scss';
 
-.navbar {
-    padding-block: 20px;
-    position: relative;
-    
-    
-    @include respond(phone) {
-        padding-block: 15px;
-    }
 
-    &_container {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-    }
-
-    &_logo {
-        img{
-            width: 100%;
-
-            @include respond(phone) {
-                width: 9rem;
-            }
-        }
-    }
-
-    &_links {
-        display: flex;
-        align-items: center;
-        gap: 2.5rem;
-
-        @include respond(tab-port){
-            display: none;
-            flex-direction: column;
-            position: absolute;
-            background-color: #e7d6f9;
-            width: 100%;
-            left: 0;
-            top: 100%;
-            padding-block: 1rem;
-            gap: 1rem;
-            align-items: flex-start;
-            padding-left: 1rem;
-            animation: navMotion 0.5s ease;
-        }
-
-        a {
-            color: #222;
-            transition: color 0.3s ease-in-out;
-
-            &:hover {
-                color: #6f00eb;
-            }
-        }
-    }
-
-    &_btn{
-        @include respond(tab-port){
-            display: none;
-        }
-    }
-    &_menubar{
-        display: none;
-        cursor: pointer;
-        border-radius: 50%;
-        padding: 0.8rem;
-        background-color: #6f00eb;
-        transition: all 0.3 ease;
-
-        svg {
-            display: grid;
-            place-content: center;
-            font-size: 1.2rem;
-            color: #fff;
-        }
-
-        @include respond(tab-port){
-            display: inline-block;
-        }
-    }  
-}
-
-.show-nav {
+.navbar_container{
     display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.09rem;
+    padding: 0 30px;
+    width: 100%;
+    height: 80px;
+    border-radius: 10px;
+    position: fixed;
+    top: 0;
+    left: 0%;
+    background-color: #fff;
+    box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.1);
+}
+.navbar_logo {
+    justify-content: start;
+    cursor: pointer;
 }
 
-.bg-color {
-    background-color: #222;
+
+.navbar_links {
+    display: grid;
+    grid-template-columns: repeat(5, auto);
+    grid-gap: 12px;
+    list-style: none;
+    align-items: center;
+    text-align: center;
+    justify-content: end;
+    margin: calc(100vw - 85%);
+   
 }
 
-@keyframes navMotion {
-    0% {
-        transform: translateX(100%);
+.navbar_links a {
+    text-decoration: none;
+    color: #222;
+    padding: 0.9rem 2rem;
+    white-space: nowrap;
+    transition: 0.3s ease-in-out;
+    
+    &:hover {
+        background-color: rgba(0, 0, 0, 0.1);
+        border-radius: 5px;
     }
-    100% {
-        transform: translateX(0%);
+}
+
+@media screen and (max-width: 850px) {
+    .navbar_links {
+        animation: navMotion 0.5s ease;
+    }
+    .navbar_container {
+        z-index: 99;
+    }
+    
+
+
+
+    @keyframes navMotion {
+        0% {
+            transform: translateX(100%);
+        }
+        100% {
+            transform: translateX(0%);
+        }
     }
 }
