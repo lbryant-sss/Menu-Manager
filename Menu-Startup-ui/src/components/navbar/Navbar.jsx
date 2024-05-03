@@ -20,7 +20,10 @@ const Navbar = () => {
         <nav className="navbar side_navbar">
             <wrapper className="navbar_container side_nav_container">
                 <a href="#" className="navbar_logo">
-                            <img src={Logo} alt="" />
+                    <img src={Logo} alt="" />
+                </a>
+                <a href="#" className='brand_link'>
+                    <span className="brand_name">brand</span>
                 </a>
                 
                 <ul className={'navbar_links $ {showNav ? "show-nav" : ""}'}>
@@ -30,7 +33,7 @@ const Navbar = () => {
                         </a>
                      </li>
                     <li>
-                        <a href="#">Homer</a>
+                        <a href="#">Home</a>
                     </li>
                     <li>
                         <a href="#">Pricing</a>
@@ -39,11 +42,14 @@ const Navbar = () => {
                         <a href="#">How to set-up</a>
                     </li>
                     <li>
-                    <a href="" className="button-primary navbar_btn">
-                    Sign Up
-                </a>
+                        <a href="" className="button-primary side_navbar_btn">
+                            Sign Up
+                        </a>
                     </li>
                 </ul>
+                <a href="" className="button-primary navbar_btn_out">
+                    Sign Up
+                </a>
                 <div onClick={showSidebar} className={'navbar_menubar $ {showNav ? "bg-color" : ""}'}>
                     <FaBars />
                 </div>
