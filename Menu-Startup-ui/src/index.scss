@@ -81,24 +81,22 @@ h6 {
 .button-primary {
     color: #fff;
     text-align: center;
-    background-color: #6f00eb;
-    border-radius: 30px;
+    background-color: #870058;
     padding: 10px 30px;
     transition: background-color 0.3s ease-in-out;
 
     &:hover{
-        background-color: #9e54f0;
+        background-color: #110d34;
     }
 }
 
 .button-outline {
     color: #110d34;
     text-align: center;
-    background-color: rgba(0, 0, 0, 0,);
+    background-color: rgba(0, 0, 0, 0);
     border: 1px solid #110d34;
     padding: 10px 30px;
     transition: all 0.3s ease-in-out;
-    border-radius: 30px;
 
     &:hover {
         background-color: #110d34;

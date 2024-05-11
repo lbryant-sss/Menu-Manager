@@ -42,11 +42,19 @@ const Navbar = () => {
                         <a href="#">How to set-up</a>
                     </li>
                     <li>
+                        <a href="" className="button-outline side_navbar_btn">
+                            Log In
+                        </a>
+                    </li>
+                    <li>
                         <a href="" className="button-primary side_navbar_btn">
                             Sign Up
                         </a>
                     </li>
                 </ul>
+                <a href="" className="button-outline navbar_btn_out">
+                    Log In
+                </a>
                 <a href="" className="button-primary navbar_btn_out">
                     Sign Up
                 </a>

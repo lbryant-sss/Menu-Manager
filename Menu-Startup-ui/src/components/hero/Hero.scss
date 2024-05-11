@@ -5,26 +5,45 @@
     display: grid;
     align-items: flex-start;
     grid-template-columns: repeat(2, 1fr);
-    margin: 1.3rem;
+    padding-block: 3rem;
+    animation: slide 0.5s linear;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 .hero_left {
-    padding-block: 7rem;
-    background-color: red;
+    margin-top: 6rem;
+    padding-left: 60px;
+    background-color: #fff;
 }
-p{
-    display: none;
+
+.hero_btn-container {
+    padding: 15px;
 }
-.hero_right {
-    background-color: green;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.hero_btn-container a{
+    margin: 12px;
 }
 
 .hero_right img {
-    padding: 10px;
     height: auto;
-    width: 400px;
+    padding-left: 50px;
+    width: 450px;
+}
+
+@media screen and (max-width: 900px) {
+    .hero {
+        display: flex;
+        flex-direction: column;
+    }
+    .hero_left{
+        position: absolute;
+        padding-top: 30px;
+        left: 0;
+        background: transparent;
+    }
+    .hero_btn-container{
+        margin-top: 20%;
+        
+    }
+
 }
