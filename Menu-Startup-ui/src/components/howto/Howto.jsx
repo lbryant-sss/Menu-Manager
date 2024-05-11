@@ -10,6 +10,10 @@ const Howto = () => {
                     for your restaurant
                 </span>
             </div>
+            <div className="steps_container">
+                <div className="hexagon step_1">
+                </div>
+            </div>
         </section>
     )
 }
