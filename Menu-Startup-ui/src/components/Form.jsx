@@ -28,7 +28,7 @@ function Form({route, method}) {
             }
         }
         catch (error) {
-            alert(erroe)
+            alert(error)
         } finally {
             setLoading(false)
         }
@@ -46,12 +46,14 @@ function Form({route, method}) {
             <input
             type="password"  
             className="form-input" 
-            value={user}
-            onChange={(e) => setpassword(e.target.value)}
-            placeholder="password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+            placeholder="Password"
             />
             <button className="form-button" type="submit">
                 {name}
             </button>
     </form>
 }
+
+export default Form;
