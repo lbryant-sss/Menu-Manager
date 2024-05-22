@@ -1,7 +1,3 @@
-import Navbar from "./components/navbar/Navbar";
-import Hero from "./components/hero/Hero";
-import Howto from "./components/howto/Howto";
-
 import { BrowserRouter, Routes, Navigate, Route } from "react-router-dom";
 import Login from "./pages/Login";
 import Home from "./pages/Home";

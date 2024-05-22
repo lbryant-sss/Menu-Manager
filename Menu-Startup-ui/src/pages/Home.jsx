@@ -1,5 +1,8 @@
+
 function Home() {
-    return <div>Home</div>
+    return(
+        <h1>Home. You are successfully logged in</h1>
+    );
 }
 
-export default Home;
+export default Home
