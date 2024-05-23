@@ -1,8 +1,8 @@
-import { Navigate } from "react-router-dom";
-import { jwtDecode } from "jwt-decode";
-import api from "../api";
-import { REFRESH_TOKEN, ACCESS_TOKEN } from "../constants";
-import { useState, useEffect } from "react";
+import { Navigate } from "react-router-dom"
+import { jwtDecode } from "jwt-decode"
+import api from "../api"
+import { REFRESH_TOKEN, ACCESS_TOKEN } from "../constants"
+import { useState, useEffect } from "react"
 
 function ProtectedRoute({children}) {
     const [isAuthorized, setIsAuthorized] = useState(null)
@@ -43,7 +43,7 @@ function ProtectedRoute({children}) {
         if (tokenExpiration < now) {
             await refreshToken()
         } else {
-            setIsAuthorized(false)
+            setIsAuthorized(true)
         }
 
     }
@@ -55,4 +55,4 @@ function ProtectedRoute({children}) {
 
 }
 
-export default ProtectedRoute;
+export default ProtectedRoute
