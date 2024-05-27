@@ -15,24 +15,67 @@ function Home() {
         api
             .get("/api/notes/")
             .then((res) => res.data)
-            .then((data) => {setNotes(data); console.groupCollapsed(data)})
-            .catch((err) => alert(err))
+            .then((data) => {setNotes(data);
+                console.log(data);
+            })
+            .catch((err) => alert(err));
     };
 
     const deleteNote = (id) => {
-        api.delete("/api/note/delete/{id}").then((res) => {
-            if (res.status === "204") alert("Note Deleted")
+        api
+            .delete("/api/notes/delete/${id}/")
+            .then((res) => {
+            if (res.status === 204) alert("Note Deleted")
             else alert("Failed to delete note.")
+            getNotes();
         })
-        .catch((error) => alert(error))
-        getNotes()
-    }
+        .catch((error) => alert(error));
+        
+    };
+
+
+    const createNote = (e) => {
+        e.preventDefault()
+        api.post("/api/notes/", {content, title}).then((res) => {
+            if (res.status === 201) alert("Note Created")
+            else alert("Failed to make note")
+            getNotes();
+        }).catch((err) => alert(err));
+    };
 
 
 
     return(
-        <h1>Home. You are successfully logged in</h1>
+        <div>
+            <h2>Notes</h2>
+            <form onSubmit={createNote}>
+                <label htmlFor="title">TItle: </label>
+                <br />
+                <input 
+                    type="text" 
+                    id="title" 
+                    name="title" 
+                    required 
+                    onChange={(e) => setTitle(e.target.value)} 
+                    value={title}
+                />
+                <br />
+                <label htmlFor="title">Content: </label>
+                <br />
+                <input 
+                    type="textarea" 
+                    id="content" 
+                    name="content" 
+                    required 
+                    onChange={(e) => setContent(e.target.value)} 
+                    value={content}
+                />
+                <br />
+                <br />
+                <input type="submit" value="Submit" />
+            </form>
+        </div>
     );
 }
 
-export default Home
+export default Home;
