@@ -20,6 +20,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
 
+
+
 REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": (
         "rest_framework_simplejwt.authentication.JWTAuthentication",
@@ -136,3 +138,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CORS_ALLOW_ALL_ORIGINS = True
 CORS_ALLOWS_REDENTIALS = True 
+
+APPEND_SLASH = False
